@@ -228,7 +228,7 @@ class YPVideoCaptureHelper: NSObject {
                 session.addInput(audioInput)
             }
 
-            let timeScale: Int32 = 30 // FPS
+            let timeScale: Int32 = 60 // FPS
             let maxDuration =
                 CMTimeMakeWithSeconds(self.videoRecordingTimeLimit, preferredTimescale: timeScale)
             videoOutput.maxRecordedDuration = maxDuration
@@ -243,7 +243,7 @@ class YPVideoCaptureHelper: NSObject {
             if session.canAddOutput(videoOutput) {
                 session.addOutput(videoOutput)
             }
-            session.sessionPreset = .high
+            session.sessionPreset = .hd1920x1080
         }
         session.commitConfiguration()
         isCaptureSessionSetup = true
